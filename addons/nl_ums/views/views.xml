@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="nl_ums.list">
+      <field name="name">nl_ums list</field>
+      <field name="model">nl_ums.nl_ums</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="nl_ums.action_window">
+      <field name="name">nl_ums window</field>
+      <field name="res_model">nl_ums.nl_ums</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="nl_ums.action_server">
+      <field name="name">nl_ums server</field>
+      <field name="model_id" ref="model_nl_ums_nl_ums"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="nl_ums" id="nl_ums.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="nl_ums.menu_1" parent="nl_ums.menu_root"/>
+    <menuitem name="Menu 2" id="nl_ums.menu_2" parent="nl_ums.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="nl_ums.menu_1_list" parent="nl_ums.menu_1"
+              action="nl_ums.action_window"/>
+    <menuitem name="Server to list" id="nl_ums" parent="nl_ums.menu_2"
+              action="nl_ums.action_server"/>
+    -->
+  </data>
+</odoo>
