@@ -10,7 +10,7 @@ All codes written should follow [Odoo 10's code guidelines](https://www.odoo.com
 Code to this repository can only be pushed through **Pull Requests**. Therefore, fork this repository and create pull requests.
 
 ### Step 2
-Add two remote git repositories and name them however you like. One git repo should refer to base UMS remote repo [https://github.com/NETLINKSAF/mofa-hr]() and another should refer to your forked repo. **Always pull from UMS repo and push to your own forked repo**.
+Add two remote git repositories and name them however you like. One git repo should refer to base UMS remote repo [https://github.com/mustafa-netlinks/test-ums]() and another should refer to your forked repo. **Always pull from UMS repo and push to your own forked repo**.
 
 ### Step 3
 Before doing anything with code, **pull** the **latest changes** from UMS's repo. Then, make changes to code and before committing do not forget to run `autopep8` in the root directory of the project.
