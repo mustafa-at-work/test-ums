@@ -1,26 +1,25 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "nl_ums",
+    'name': "Test University Management System",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Test University Management System""",
 
     'description': """
-        Long description of module's purpose
+        Test University Management System
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Test Author",
+    'website': "http://www.testcompany.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Education',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'hr'],
 
     # always loaded
     'data': [
