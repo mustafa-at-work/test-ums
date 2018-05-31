@@ -70,6 +70,7 @@
         </field>     
     </record>
         
+    <!--Students Tree View-->    
     <record id="studnet_view_list" model="ir.ui.view">
         <field name="name">Student List View</field>
         <field name="model">ums.students</field>

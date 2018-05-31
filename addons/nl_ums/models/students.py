@@ -48,7 +48,7 @@ class Student(models.Model):
     
     # when click the checkbox current address is set to permanent address
     
-    
+    #On change api
     @api.onchange('same_as_current_address')
     def _set_permanent_address(self):
         if self.same_as_current_address==True:
