@@ -2,6 +2,7 @@
 
 from odoo import models, fields, api
 
+
 class nl_ums(models.Model):
     _name = 'nl_ums.nl_ums'
 
