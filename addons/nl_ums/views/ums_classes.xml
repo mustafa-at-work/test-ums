@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<odoo>
+    <record id='ums_classes_form_view' model='ir.ui.view'>
+        <field name='name'>classes.form</field>
+        <field name='model'>ums.classes</field>
+        <field name='arch' type='xml'>
+            <form>
+                <field name='name'/>
+            </form>
+        </field>
+    </record>
+
+    <act_window 
+            id='ums_classes_list_action'
+            name='Classes'
+            res_model='ums.classes'
+            view_type='form'
+            view_mode='tree,form,search'/>
+</odoo>
