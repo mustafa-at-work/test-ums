@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <odoo>
-    <record id='ums_classes_form_view' model='ir.ui.view'>
+    <record id='classes_view_form' model='ir.ui.view'>
         <field name='name'>classes.form</field>
         <field name='model'>ums.classes</field>
         <field name='arch' type='xml'>
@@ -16,4 +16,16 @@
             res_model='ums.classes'
             view_type='form'
             view_mode='tree,form,search'/>
+
+    <!-- ums main menu -->
+    <menuitem 
+            name='UMS'
+            id='ums_main_menu'/>
+
+        <!-- ums classes side menu -->
+        <menuitem
+            id='ums_classes_side_menu'
+            parent='ums_main_menu'
+            name='Classes'
+            action='ums_classes_list_action'/>
 </odoo>

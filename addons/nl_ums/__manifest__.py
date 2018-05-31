@@ -26,8 +26,8 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'views/ums_classes.xml',
-        'views/ums_main_menu.xml',
+        'views/classes_views.xml',
+        
     ],
     # only loaded in demonstration mode
     'demo': [
