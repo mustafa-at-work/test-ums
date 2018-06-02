@@ -2,13 +2,12 @@
 <odoo>
     <record id='classes_view_form' model='ir.ui.view'>
         <field name='name'>class.form</field>
-        <field name='model'>nl_ums.class</field>
-
+        <field name='model'>ums.classes</field>
+    </record>
     <!-- classes form view -->
     <record id='ums_classes_view_form' model='ir.ui.view'>
         <field name='name'>classes.form</field>
         <field name='model'>ums.classes</field>
-
         <field name='arch' type='xml'>
             <form string='Classes Form'>
                 <sheet>
@@ -47,9 +46,9 @@
     <act_window 
             id='ums_classes_list_action'
             name='Classes'
-            res_model='nl_ums.class'
+            res_model='ums.classes'
             view_type='form'
-            view_mode='tree,form,search'/>
+            view_mode='tree,form'/>
 
     <!-- classes tree view -->
     <record id='ums_classes_tree-view' model='ir.ui.view'>
@@ -71,7 +70,7 @@
         <field name="name">Classes</field>
         <field name="res_model">ums.classes</field>
         <field name='view_type'>form</field>
-        <field name="view_mode">tree,form,search</field>
+        <field name="view_mode">tree,form</field>
     </record>
 
 
