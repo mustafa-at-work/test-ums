@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Test University Management System",
+    'name': "Master",
 
     'summary': """
-        Test University Management System""",
+                Master table for Test University Management System
+                """,
 
     'description': """
-        Test University Management System
-    """,
+                    Master table for Test University Management System
+                    """,
 
-    'author': "odoo interns",
+    'author': "Test Author",
     'website': "http://www.testcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -19,14 +20,12 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'hr'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/templates.xml',
-        'views/class_views.xml',
-        'views/lecture_views.xml',
+        'views/topic_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

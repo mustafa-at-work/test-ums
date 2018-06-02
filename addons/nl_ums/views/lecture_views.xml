@@ -1,0 +1,46 @@
+<odoo>
+  <data>
+  <!-- lecture views -->
+  <!-- views and menus -->
+  <record id="lecture_view_form" model="ir.ui.view">
+    <field name="name">lecture.form</field>
+    <field name="model">nl_ums.lecture</field>
+    <field name="arch" type="xml">
+      <form string="Lectures">
+          <group>
+            <field name="title" widget="many2many_tags"/>
+            <field name="date"/>
+          </group>
+      </form>
+    </field>
+  </record>
+
+  <record id="lecture_view_tree" model="ir.ui.view">
+    <field name="name">lecture.tree</field>
+    <field name="model">nl_ums.lecture</field>
+    <field name="arch" type="xml">
+      <tree string="Lectures">
+        <field name="title" widget="many2many_tags"/>
+        <field name="date"/>
+      </tree>
+    </field>
+  </record>
+     <!-- actions -->
+  <record id="lecture_list_action" model="ir.actions.act_window">
+    <field name="name">Lectures</field>
+    <field name="res_model">nl_ums.lecture</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Create the first lecture</p>
+    </field>
+  </record>
+  <!-- lecture menus -->
+  <!--&lt;!&ndash; top level menu: no parent &ndash;&gt;-->
+  <!--<menuitem id="main_nl_ums_menu" name="UMS"/>-->
+  <!-- first level menu -->
+  <menuitem id="lectures_menu" name="Lectures" parent="ums_main_menu"
+            action="lecture_list_action"/>
+
+  </data>
+</odoo>

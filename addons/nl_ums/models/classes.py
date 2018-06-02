@@ -2,7 +2,8 @@
 
 from odoo import models, fields, api
 
-class UMSClasses(models.Model):
-    _name='ums.classes'
 
-    name=fields.Char('Class Name')
+class Class(models.Model):
+    _name = 'nl_ums.class'
+
+    name = fields.Char('Class Name')
