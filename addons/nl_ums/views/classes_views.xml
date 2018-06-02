@@ -1,21 +1,65 @@
 <?xml version='1.0'?>
 <odoo>
-    <record id='classes_view_form' model='ir.ui.view'>
+    <!-- classes form view -->
+    <record id='ums_classes_view_form' model='ir.ui.view'>
         <field name='name'>classes.form</field>
         <field name='model'>ums.classes</field>
         <field name='arch' type='xml'>
-            <form>
-                <field name='name'/>
+            <form string='Classes Form'>
+                <sheet>
+                    <group>
+                        <group > 
+                            <field name='name'/>
+                            <field name='course'/>
+                            <field name='semester'/>
+                        </group>  
+                        <group > 
+                            <field name='year'/>
+                            <field name='start_date'/>
+                            <field name='end_date'/>
+                        </group>  
+                    </group>
+                    <notebook>
+                        <page string='Description'>
+                            Discription about the class if need it!
+                        </page>
+                        <page string='Students'>
+                            Students available in this will apear here!
+                        </page>
+                        <page string='Sessions'>
+                            Sessions belongs to this class will apear here!
+                        </page>
+                        <page string='Materials'>
+                            Materials belongs to this class will apear here!
+                        </page>
+                    </notebook>  
+                </sheet>
             </form>
         </field>
     </record>
 
-    <act_window 
-            id='ums_classes_list_action'
-            name='Classes'
-            res_model='ums.classes'
-            view_type='form'
-            view_mode='tree,form,search'/>
+    <!-- classes tree view -->
+    <record id='ums_classes_tree-view' model='ir.ui.view'>
+        <field name='name'>classes.tree</field>
+        <field name='model'>ums.classes</field>  
+        <field name='arch' type='xml'>
+            <tree string='Classes tree'> 
+                <field name='name'/>
+                <field name='course'/>
+                <field name='semester'/>
+                <field name='start_date'/>
+                <field name='end_date'/>
+            </tree>
+        </field>      
+    </record>
+
+    <!-- classes action  -->
+    <record id='ums_classes_list_action' model="ir.actions.act_window">
+        <field name="name">Classes</field>
+        <field name="res_model">ums.classes</field>
+        <field name='view_type'>form</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
 
     <!-- ums main menu -->
     <menuitem 
@@ -23,9 +67,9 @@
             id='ums_main_menu'/>
 
         <!-- ums classes side menu -->
-        <menuitem
-            id='ums_classes_side_menu'
-            parent='ums_main_menu'
-            name='Classes'
-            action='ums_classes_list_action'/>
+    <menuitem
+        id='ums_classes_side_menu'
+        parent='ums_main_menu'
+        name='Classes'
+        action='ums_classes_list_action'/>
 </odoo>
