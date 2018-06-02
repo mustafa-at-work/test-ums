@@ -26,7 +26,7 @@
         # 'security/ir.model.access.csv',
         'views/templates.xml',
 
-        'views/class_views.xml',
+        'views/classes_views.xml',
         'views/lecture_views.xml',
 
         'views/students_views.xml',
