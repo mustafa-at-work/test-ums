@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- floor tree view -->
+	<record id="ums_floor_view_tree" model="ir.ui.view">
+		<field name="name">Floor Tree</field>
+		<field name="model">ums.floor</field>
+		<field name="arch" type="xml">
+			<tree>
+	            <field name="name"/>
+	            <field name="building_id"/>
+        	</tree>
+		</field>
+	</record>
+    <!-- floor form view -->
+	<record id="ums_floor_view_form" model="ir.ui.view">
+		<field name="name">Floor Form</field>
+		<field name="model">ums.floor</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+                        <field name="name"/>
+                        <field name="building_id"/>
+		        	</group>
+		        </sheet>
+        	</form>
+		</field>
+	</record>
+	<!--  floor action menu-->
+	<act_window 
+        id="ums_floor_action"
+		name="Floor"
+		res_model="ums.floor"
+		view_mode="tree,form" />
+	<!-- floor menu -->
+	<menuitem 
+        id="ums_floor_menu" 
+        name="Floor" 
+        action="ums_floor_action" 
+        parent="menu_master" />
+</odoo>
