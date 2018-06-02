@@ -1,11 +1,11 @@
 <?xml version='1.0'?>
 <odoo>
     <!-- classes form view -->
-    <record id='classes_view_form' model='ir.ui.view'>
+    <record id='ums_classes_view_form' model='ir.ui.view'>
         <field name='name'>classes.form</field>
-        <field name='model'>nl_ums.classes</field>
+        <field name='model'>ums.classes</field>
         <field name='arch' type='xml'>
-            <form>
+            <form string='Classes Form'>
                 <sheet>
                     <group>
                         <group > 
@@ -39,9 +39,9 @@
     </record>
 
     <!-- classes tree view -->
-    <record id='classes_tree-view' model='ir.ui.view'>
+    <record id='ums_classes_tree-view' model='ir.ui.view'>
         <field name='name'>classes.tree</field>
-        <field name='model'>nl_ums.classes</field>  
+        <field name='model'>ums.classes</field>  
         <field name='arch' type='xml'>
             <tree string='Classes tree'> 
                 <field name='name'/>
@@ -54,9 +54,9 @@
     </record>
 
     <!-- classes action  -->
-    <record id='classes_list_action' model="ir.actions.act_window">
+    <record id='ums_classes_list_action' model="ir.actions.act_window">
         <field name="name">Classes</field>
-        <field name="res_model">nl_ums.classes</field>
+        <field name="res_model">ums.classes</field>
         <field name='view_type'>form</field>
         <field name="view_mode">tree,form,search</field>
     </record>
@@ -71,5 +71,5 @@
         id='ums_classes_side_menu'
         parent='ums_main_menu'
         name='Classes'
-        action='classes_list_action'/>
+        action='ums_classes_list_action'/>
 </odoo>

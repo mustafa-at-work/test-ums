@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 
 class Classes(models.Model):
-    _name = 'nl_ums.classes'
+    _name = 'ums.classes'
 
     name = fields.Char('Name', required=True)
     course = fields.Char('Course', required=True)
