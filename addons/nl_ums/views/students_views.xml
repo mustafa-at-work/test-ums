@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="student_view_form" model="ir.ui.view">
+            <field name="name">Student</field>
+            <field name="model">ums.students</field>
+            <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title" style="width:300px;height:50px;">
+                        <label for="fullname" class="oe_edit_only"/>
+                        <h2>
+                        <field name="fullname" placeholder="Student Full Name"/>
+                        </h2>
+                    </div>
+                    <notebook>
+                        <page string="Public Information">
+                            <group name="group-top">
+                                <group name="group-left" string="Contact Details">
+                                    <field name="fatherName"/>
+                                    <field name="phone"/>
+                                    <field name="email"/>
+                                </group>
+                                <group name="group-right" string="Citizensihp and Other Details">
+                                    <field name="tazkira_no"/>
+                                    <field name="passport_no"/>
+                                    <field name="nationality"/>
+                                    <field name="country"/>   
+                                </group>
+                            </group>
+                            <group name="group-top">
+                                <group name="group-left" string="Current Address">
+                                    <field name="current_province"/>
+                                    <field name="current_district"/>
+                                    <field name="current_village"/>
+                                </group>
+                                <group name="group-right" string="Permanent Address">
+                                    <field name="permanent_province"/>
+                                    <field name="permanent_district"/>
+                                    <field name="permanent_village"/>
+                                </group>
+                            </group>
+                            <field name="same_as_current_address" type="checkbox"/>
+                        </page>
+                        <page string="Personal Information">
+                            <group name="group-top">
+                                <group name="group-left" string="Position">
+                                    <field name="school"/>    
+                                    <field name="faculty"/>
+                                    <field name="department"/>
+                                    <field name="rno"/>
+                                    <field name="addmission_date"/>
+                                </group>
+                                <group name="group-right" string="Status">
+                                    <field name="gender"/>
+                                    <field name="status"/>
+                                    <field name="dob"/>
+                                    <field name="age"/>                                  
+                                </group>
+                            </group>
+                         
+                        </page> 
+                    </notebook>
+                </sheet>        
+            </form>
+        </field>     
+    </record>
+        
+    <!--Students Tree View-->    
+    <record id="studnet_view_list" model="ir.ui.view">
+        <field name="name">Student List View</field>
+        <field name="model">ums.students</field>
+        <field name="arch" type="xml">
+            <tree string="Student Tree View"> 
+                <field name="fullname"/>
+                <field name="fatherName"/>
+                <field name="email" widget="email"/>
+                <field name="dob"/>
+                <field name="tazkira_no"/>
+            </tree>
+        </field>    
+    </record>
+        
+    <!--Parent Menu Begings Here-->
+    <record model="ir.actions.act_window" id="student_list_action">
+        <field name="name">Students Registration</field>
+        <field name="res_model">ums.students</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field> 
+    </record>
+    <menuitem 
+        id="students_menu" 
+        name="Students" 
+        parent="ums_main_menu" 
+        action="student_list_action"/>
+
+    </data>
+</odoo>
