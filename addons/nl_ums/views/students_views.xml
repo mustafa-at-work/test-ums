@@ -8,7 +8,7 @@
             <form>
                 <sheet>
                     <div class="oe_title" style="width:300px;height:50px;">
-                        <label for="fullname" class="oe_edit_only"/>
+                        <!-- <label for="fullname" class="oe_edit_only"/> -->
                         <h2>
                         <field name="fullname" placeholder="Student Full Name"/>
                         </h2>
@@ -80,13 +80,71 @@
             </tree>
         </field>    
     </record>
+
+    <record id="student_view_search" model="ir.ui.view">
+        <field name="name">Student Search View</field>
+        <field name="model">ums.students</field>
+        <field name="arch" type="xml">
+            <search>
+
+            </search>
+        </field>
+    </record>    
+
+    <record model="ir.ui.view" id="student_view_kanban">
+            <field name="name">ums.students.kanban</field>
+            <field name="model">ums.students</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="fullname">
+                    <field name="color"/>
+                     <templates>
+                        <t t-name="kanban-box">
+                            <div
+                                    t-attf-class="oe_kanban_color_{{kanban_getcolor(record.color.raw_value)}}
+                                                  oe_kanban_global_click_edit oe_semantic_html_override
+                                                  oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}">
+                                    
+                                    <div class="oe_dropdown_kanban">
+                                    <!-- dropdown menu -->
+                                        <div class="oe_dropdown_toggle">
+                                            <i class="fa fa-bars fa-lg"/>
+                                                <ul class="oe_dropdown_menu">
+                                                    <li>
+                                                        <a type="delete">Delete</a>
+                                                    </li>
+                                                    <li>
+                                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                                    </li>  
+                                                </ul>
+                                        </div>
+                                            <div class="oe_clear"></div>
+                                        </div>                      
+                              
+                                <div t-attf-class="oe_kanban_content">
+                                    
+                                    Student Name:<field name="fullname"/><br/>
+                                    Phone Number:<field name="phone"/><br/>
+                                    Email:<field name="email"/><br/>
+                                    Tazkira:<field name="tazkira_no"/><br/>
+                                    Faculty:<field name="faculty"/><br/>
+                                    Department:<field name="department"/><br/>
+                                    Addmission Date:<field name="addmission_date"/><br/>
+                                </div>
+                                
+                            </div>
+                        </t>
+                    </templates>
+                   
+                </kanban>
+            </field>
+        </record>
         
     <!--Parent Menu Begings Here-->
     <record model="ir.actions.act_window" id="student_list_action">
         <field name="name">Students Registration</field>
         <field name="res_model">ums.students</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field> 
+        <field name="view_mode">tree,form,kanban</field> 
     </record>
     <menuitem 
         id="students_menu" 

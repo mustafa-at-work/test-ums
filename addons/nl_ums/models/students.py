@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 from odoo import models,fields,api
 
 class Student(models.Model):
@@ -28,10 +30,11 @@ class Student(models.Model):
     permanent_village=fields.Char('Village',required=True)
 
     school=fields.Char(string='Graduation School',required=True)
-    
-    faculty=fields.Char('Faculty')
-    department=fields.Char('Department')
-    rno=fields.Char('Role Number')
+
+    faculty=fields.Many2one('ums.faculty','Faculty',required=True,ondelete="")
+    department=fields.Many2one('ums.department','Department',required=True,ondelete="")
+
+    rno=fields.Char('Role Number',required=True)
     addmission_date=fields.Date('Addmission Date')
 
 
@@ -51,7 +54,7 @@ class Student(models.Model):
     dob=fields.Date(string="DOB",required=True)
     age=fields.Char('Age')
     
-    
+    color=fields.Integer()
     
    
     # color=fields.Integer()
