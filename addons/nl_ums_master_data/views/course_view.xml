@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
+
 	<record id="view_tree_course" model="ir.ui.view">
 		<field name="name">Course Tree</field>
 		<field name="model">ums.course</field>
@@ -38,5 +39,6 @@
 
 	<!-- course menu -->
 	<menuitem id="menu_course" name="Course" action="action_course" parent="menu_master" />
+
 
 </odoo>

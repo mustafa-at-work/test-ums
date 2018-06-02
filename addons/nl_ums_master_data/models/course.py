@@ -1,6 +1,7 @@
 from odoo import models, fields, api
 
 class Course(models.Model):
+	
     _name = 'ums.course'
     _description = 'Course'
     _rec_name="title"
