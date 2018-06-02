@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-<<<<<<< HEAD
+
     'name': "Master",
 
     'summary': """
@@ -13,7 +13,7 @@
 
     'author': "Test Author",
     'website': "http://www.testcompany.com",
-=======
+
     'name': "nl_ums_master_data",
 
     'summary': """
@@ -26,16 +26,16 @@
 
     'author': "My Company",
     'website': "http://www.yourcompany.com",
->>>>>>> aa5dae07ccf6198b15786205fdba78612a02054a
+
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
     # for the full list
-<<<<<<< HEAD
+
     'category': 'Education',
-=======
+
     'category': 'Uncategorized',
->>>>>>> aa5dae07ccf6198b15786205fdba78612a02054a
+
     'version': '0.1',
 
     # any module necessary for this one to work correctly
@@ -43,21 +43,18 @@
 
     # always loaded
     'data': [
-<<<<<<< HEAD
+
         # 'security/ir.model.access.csv',
         'views/topic_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
-=======
             'views/master_view.xml',
             'views/course_view.xml',
-     
     ],
     # only loaded in demonstration mode
     'demo': [
-        
->>>>>>> aa5dae07ccf6198b15786205fdba78612a02054a
+
     ],
 }

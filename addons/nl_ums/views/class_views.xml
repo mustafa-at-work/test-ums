@@ -1,15 +1,14 @@
 <?xml version='1.0'?>
 <odoo>
-<<<<<<< HEAD:addons/nl_ums/views/class_views.xml
     <record id='classes_view_form' model='ir.ui.view'>
         <field name='name'>class.form</field>
         <field name='model'>nl_ums.class</field>
-=======
+
     <!-- classes form view -->
     <record id='ums_classes_view_form' model='ir.ui.view'>
         <field name='name'>classes.form</field>
         <field name='model'>ums.classes</field>
->>>>>>> aa5dae07ccf6198b15786205fdba78612a02054a:addons/nl_ums/views/classes_views.xml
+
         <field name='arch' type='xml'>
             <form string='Classes Form'>
                 <sheet>
@@ -44,14 +43,14 @@
         </field>
     </record>
 
-<<<<<<< HEAD:addons/nl_ums/views/class_views.xml
+
     <act_window 
             id='ums_classes_list_action'
             name='Classes'
             res_model='nl_ums.class'
             view_type='form'
             view_mode='tree,form,search'/>
-=======
+
     <!-- classes tree view -->
     <record id='ums_classes_tree-view' model='ir.ui.view'>
         <field name='name'>classes.tree</field>
@@ -74,7 +73,7 @@
         <field name='view_type'>form</field>
         <field name="view_mode">tree,form,search</field>
     </record>
->>>>>>> aa5dae07ccf6198b15786205fdba78612a02054a:addons/nl_ums/views/classes_views.xml
+
 
     <!-- ums main menu -->
     <menuitem 

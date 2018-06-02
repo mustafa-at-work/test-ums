@@ -11,7 +11,6 @@ class Student(models.Model):
     phone=fields.Char('Phone')
     email=fields.Char(string='Email',required=True)
 
-    
     tazkira_no=fields.Integer(string='National ID',required=True)
     passport_no=fields.Char(string="Passport No")
     nationality=fields.Char('Nationality')
@@ -50,20 +49,12 @@ class Student(models.Model):
 
     dob=fields.Date(string="DOB",required=True)
     age=fields.Char('Age')
-    
-    
-    
-   
+
     # color=fields.Integer()
-   
-    
-   
-    
-    
-   
     
     # when click the checkbox current address is set to permanent address
-    
+
+
     #On change api
     @api.onchange('same_as_current_address')
     def _set_permanent_address(self):

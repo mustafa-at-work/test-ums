@@ -25,14 +25,13 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/templates.xml',
-<<<<<<< HEAD
+
         'views/class_views.xml',
         'views/lecture_views.xml',
-=======
+
         'views/students_views.xml',
         'views/classes_views.xml',
 
->>>>>>> aa5dae07ccf6198b15786205fdba78612a02054a
     ],
     # only loaded in demonstration mode
     'demo': [
