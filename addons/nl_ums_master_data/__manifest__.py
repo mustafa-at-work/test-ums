@@ -25,6 +25,9 @@
     # always loaded
     'data': [
             'views/master_view.xml',
+            'views/faculty_view.xml',
+            'views/department_view.xml',
+            'views/semister_view.xml',
             'views/building_view.xml',
             'views/floor_view.xml',
             'views/class_room_view.xml',
