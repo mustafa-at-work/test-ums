@@ -59,10 +59,6 @@
             'views/class_room_view.xml',
             'views/year_view.xml',
             'views/course_view.xml',
-<<<<<<< HEAD
-=======
-
->>>>>>> aaf2ec12e747fed299cf82c5530dc9d217c37849
     ],
     # only loaded in demonstration mode
     'demo': [
