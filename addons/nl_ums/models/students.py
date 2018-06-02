@@ -8,20 +8,33 @@ class Student(models.Model):
     
     fullname=fields.Char(string='Full Name' ,required=True)
     fatherName=fields.Char(string='Father Name',required=True)
+    phone=fields.Char('Phone')
     email=fields.Char(string='Email',required=True)
-    dob=fields.Date(string="DOB",required=True)
+
+    
     tazkira_no=fields.Integer(string='National ID',required=True)
+    passport_no=fields.Char(string="Passport No")
     nationality=fields.Char('Nationality')
     country=fields.Char('Country')
-    passport_no=fields.Char(string="Passport No")
+    
+    current_province=fields.Char('Province',required=True)
+    current_district=fields.Char('District',required=True)
+    current_village=fields.Char('Village',required=True)
+    
+    same_as_current_address=fields.Boolean('Set Permanent Address as Current ')
+    
+    permanent_province=fields.Char('Province',required=True)
+    permanent_district=fields.Char('District',required=True)
+    permanent_village=fields.Char('Village',required=True)
+
     school=fields.Char(string='Graduation School',required=True)
-    phone=fields.Char('Phone')
-    color=fields.Integer()
+    
     faculty=fields.Char('Faculty')
     department=fields.Char('Department')
     rno=fields.Char('Role Number')
     addmission_date=fields.Date('Addmission Date')
-    age=fields.Char('Age')
+
+
     gender=fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
@@ -34,17 +47,20 @@ class Student(models.Model):
         ('widowed','Widowed')
         
         ],string="Status")
+
+    dob=fields.Date(string="DOB",required=True)
+    age=fields.Char('Age')
     
     
-    current_province=fields.Char('Province',required=True)
-    current_district=fields.Char('District',required=True)
-    current_village=fields.Char('Village',required=True)
     
-    same_as_current_address=fields.Boolean('Set Permanent Address as Current ')
+   
+    # color=fields.Integer()
+   
     
-    permanent_province=fields.Char('Province',required=True)
-    permanent_district=fields.Char('District',required=True)
-    permanent_village=fields.Char('Village',required=True)
+   
+    
+    
+   
     
     # when click the checkbox current address is set to permanent address
     

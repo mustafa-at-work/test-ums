@@ -21,11 +21,11 @@
                                     <field name="phone"/>
                                     <field name="email"/>
                                 </group>
-                                <group name="group-right" string="Position">
-                                    <field name="faculty"/>
-                                    <field name="department"/>
-                                    <field name="rno"/>
-                                    <field name="addmission_date"/>
+                                <group name="group-right" string="Citizensihp and Other Details">
+                                    <field name="tazkira_no"/>
+                                    <field name="passport_no"/>
+                                    <field name="nationality"/>
+                                    <field name="country"/>   
                                 </group>
                             </group>
                             <group name="group-top">
@@ -40,30 +40,26 @@
                                     <field name="permanent_village"/>
                                 </group>
                             </group>
+                            <field name="same_as_current_address" type="checkbox"/>
                         </page>
                         <page string="Personal Information">
                             <group name="group-top">
-                                <group name="group-left" string="Citizensihp and Other Details">
-                                    <field name="tazkira_no"/>
-                                    <field name="nationality"/>
-                                    <field name="country"/>
+                                <group name="group-left" string="Position">
+                                    <field name="school"/>    
+                                    <field name="faculty"/>
+                                    <field name="department"/>
+                                    <field name="rno"/>
+                                    <field name="addmission_date"/>
                                 </group>
-                                <group name="group-right" string="Contact information">
-                                    <field name="email" widget="email"/>
-                                    <field name="phone"/>
-                                </group>
-                            </group>
-                            <group name="group-top">
-                                <group name="group-left" string="Status">
+                                <group name="group-right" string="Status">
                                     <field name="gender"/>
                                     <field name="status"/>
-                                </group>
-                                <group name="group-right" string="Birth">
                                     <field name="dob"/>
-                                    <field name="age"/>
+                                    <field name="age"/>                                  
                                 </group>
                             </group>
-                        </page>
+                         
+                        </page> 
                     </notebook>
                 </sheet>        
             </form>
