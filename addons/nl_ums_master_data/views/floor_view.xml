@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
-
+    <!-- floor tree view -->
 	<record id="ums_floor_view_tree" model="ir.ui.view">
 		<field name="name">Floor Tree</field>
 		<field name="model">ums.floor</field>
@@ -11,7 +11,7 @@
         	</tree>
 		</field>
 	</record>
-
+    <!-- floor form view -->
 	<record id="ums_floor_view_form" model="ir.ui.view">
 		<field name="name">Floor Form</field>
 		<field name="model">ums.floor</field>
@@ -26,15 +26,13 @@
         	</form>
 		</field>
 	</record>
-
-	<!--  Action of Building menu-->
+	<!--  floor action menu-->
 	<act_window 
         id="ums_floor_action"
 		name="Floor"
 		res_model="ums.floor"
 		view_mode="tree,form" />
-
-	<!-- Building menu -->
+	<!-- floor menu -->
 	<menuitem 
         id="ums_floor_menu" 
         name="Floor" 

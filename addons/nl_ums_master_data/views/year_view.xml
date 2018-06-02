@@ -34,15 +34,13 @@
         	</form>
 		</field>
 	</record>
-
-	<!--  Action of Building menu-->
+	<!--  year action menu-->
 	<act_window 
         id="ums_year_action"
 		name="Year"
 		res_model="ums.year"
 		view_mode="tree,form" />
-
-	<!-- Building menu -->
+	<!-- year menu -->
 	<menuitem 
         id="ums_year_menu" 
         name="Year" 

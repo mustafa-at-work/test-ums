@@ -30,10 +30,10 @@
             'views/class_room_view.xml',
             'views/year_view.xml',
             'views/course_view.xml',
-     
+
     ],
     # only loaded in demonstration mode
     'demo': [
-        
+
     ],
 }
