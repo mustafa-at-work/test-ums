@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <!--Teacher form view -->
+        <record id="teacher_view_form" model="ir.ui.view">
+            <field name="name">teacher.form</field>
+            <field name="model">ums.teacher</field>
+            <field name="arch" type="xml">
+                <form string="Teacher">
+                    <group>
+                        <group string="General Information">
+                            <field name="name"/>
+                            <field name="phone_number"/>
+                            <field name="address_id"/>
+                            <field name="email_address"/>
+                            <field name="id_number"/>
+                            <field name="gender" widget="selection"/>
+                            <field name="age"/>
+                            <field name="marital" widget="selection"/>
+                        </group>
+                        <group string="Academic Information">
+                            <field name="citizenship"/>
+                            <field name="academic_degree" widget="selection"/>
+                            <field name="educational_degree" widget="selection"/>
+                            <field name="department_id"/>
+                            <field name="class_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Teacher tree view -->
+        <record id="teacher_view_tree" model="ir.ui.view">
+            <field name="name">teacher.tree</field>
+            <field name="model">ums.teacher</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="id_number"/>
+                    <field name="phone_number"/>
+                    <field name="gender"/>
+                    <field name="age"/>
+                    <field name="academic_degree"/>
+                    <field name="educational_degree"/>
+                    <field name="department_id"/>
+                    <field name="class_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Teacher actions -->
+        <record id="teacher_list_action" model="ir.actions.act_window">
+            <field name="name">Teachers</field>
+            <field name="res_model">ums.teacher</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first teacher</p>
+            </field>
+        </record>
+
+        <!-- Teacher menu -->
+        <menuitem id="teacher_menu" name="Teachers" parent="ums_main_menu"
+            action="teacher_list_action"/>
+    </data>
+</odoo>

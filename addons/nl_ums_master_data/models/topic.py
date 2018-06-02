@@ -9,6 +9,7 @@ class Topic(models.Model):
     _rec_name = 'title'
 
     title = fields.Char(string='Title')
+    description = fields.Text()
 
     # sql constraint to check uniqueness of topic title
     _sql_constraints = [

@@ -25,6 +25,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/templates.xml',
+        'views/teacher.xml',
 
         'views/classes_views.xml',
         'views/lecture_views.xml',
