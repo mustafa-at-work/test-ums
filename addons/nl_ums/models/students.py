@@ -20,7 +20,7 @@ class Student(models.Model):
     phone = fields.Char('Phone')
     email = fields.Char(string='Email', required=True)
 
-    tazkira_no = fields.Integer(string='National ID', required=True)
+    tazkira_no = fields.Integer(string='National ID', required=False)
     passport_no = fields.Char(string="Passport No")
     nationality = fields.Char('Nationality')
     country = fields.Char('Country')
@@ -99,3 +99,7 @@ class Student(models.Model):
         elif self.age > 50:
             raise ValidationError(_('You are too older: %s' % self.age))
 
+
+    _sql_constraints = [
+        ('tazkira_no_uniq', 'unique (tazkira_no)', 'This Tazkira number is already exists!')
+    ]
