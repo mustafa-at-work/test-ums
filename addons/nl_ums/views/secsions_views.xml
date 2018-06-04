@@ -1,0 +1,85 @@
+<?xml version='1.0'?>
+<odoo>
+    <!-- Sections form view -->
+    <record id='ums_sections_view_form' model='ir.ui.view'>
+        <field name='name'>Secsions.form</field>
+        <field name='model'>ums.sections</field>
+        <field name='arch' type='xml'>
+            <form string='Sections Form'>
+                <sheet>
+                    <group>
+                        <group > 
+                            <field name='name'/>
+                            <field name='class_id'/>
+                            <field name='department_id'/>                            
+                            <field name='semester_id'/>
+                            <field name='course_id'/>
+                            <field name='lecturer_id'/>
+                        </group>  
+                        <group > 
+                            <field name='year'/>
+                            <field name='timing'/>
+                            <field name='start_time'/>
+                            <field name='end_time'/>
+                            <field name='class_room'/>
+                        </group>  
+                    </group>
+                    <notebook>
+                        <page string='Description'>
+                            Discription about the class if need it!
+                        </page>
+                        <page string='Students'>
+                            Students available in this will apear here!
+                        </page>
+                        <page string='Sessions'>
+                            Sessions belongs to this class will apear here!
+                        </page>
+                        <page string='Materials'>
+                            Materials belongs to this class will apear here!
+                        </page>
+                    </notebook>  
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Sections tree view -->
+    <record id='ums_sections_tree-view' model='ir.ui.view'>
+        <field name='name'>sections.tree</field>
+        <field name='model'>ums.sections</field>  
+        <field name='arch' type='xml'>
+            <tree string='Classes tree'> 
+                <field name='name'/>
+                <field name='class_id'/>
+                <field name='department_id'/>
+                <field name='semester_id'/>
+                <field name='course_id'/>                
+                <field name='timing'/>
+                <field name='lecturer_id'/>
+                <field name='class_room'/>
+                <field name='start_time'/>
+                <field name='end_time'/>
+            </tree>
+        </field>      
+    </record>
+
+    <!-- Sections action  -->
+    <record id='ums_sections_list_action' model="ir.actions.act_window">
+        <field name="name">Sections</field>
+        <field name="res_model">ums.sections</field>
+        <field name='view_type'>form</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <!-- ums main menu -->
+    <menuitem 
+            name='UMS'
+            id='ums_main_menu'/>
+
+        <!-- ums Sections side menu -->
+    <menuitem
+        id='ums_sections_side_menu'
+        parent='ums_main_menu'
+        name='Sections'
+        action='ums_sections_list_action'/>
+</odoo>
