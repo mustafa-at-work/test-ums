@@ -1,7 +1,8 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from datetime import datetime,date
 from dateutil.relativedelta import relativedelta 
 import time
+from odoo.exceptions import ValidationError
 
 
 class Student(models.Model):
@@ -11,6 +12,8 @@ class Student(models.Model):
     description = 'Student Model'
     faculty_id = fields.Many2one('ums.faculty', string="Faculty")
     department_id = fields.Many2one('ums.department', string="Department")
+    class_id = fields.Many2one('ums.classes', string="Class")
+
 
     fullname = fields.Char(string='Full Name', required=True)
     fatherName = fields.Char(string='Father Name', required=True)
@@ -37,7 +40,7 @@ class Student(models.Model):
     faculty = fields.Char('Faculty')
     department = fields.Char('Department')
     rno = fields.Char('Role Number')
-    addmission_date = fields.Date('Addmission Date', compute='_current_date')
+    addmission_date = fields.Date('Addmission Date', compute='_get_current_date', readonly="1")
 
     gender = fields.Selection([
         ('male', 'Male'),
@@ -82,6 +85,17 @@ class Student(models.Model):
                 rd = relativedelta(d2, d1)
                 rec.age = int(rd.years)
 
+
     @api.depends('addmission_date')
-    def _current_date(self):
-        self.addmission_date = date.today()
+    def _get_current_date(self):
+        for record in self:
+            record.addmission_date = date.today()
+
+
+    @api.constrains('age')
+    def _check_age(self):
+        if self.age < 18:
+            raise ValidationError(_('You are not enough older: %s' % self.age))
+        elif self.age > 50:
+            raise ValidationError(_('You are too older: %s' % self.age))
+

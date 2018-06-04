@@ -19,7 +19,7 @@
                                 <group name="group-left" string="Contact Details">
                                     <field name="fatherName"/>
                                     <field name="phone"/>
-                                    <field name="email"/>
+                                    <field name="email" widget="email"/>
                                 </group>
                                 <group name="group-right" string="Citizensihp and Other Details">
                                     <field name="tazkira_no"/>
@@ -49,6 +49,7 @@
                                     <field name="school"/>    
                                     <field name="faculty_id"/>
                                     <field name="department_id" domain="[('faculty_id','=',faculty_id)]"/>
+                                    <field name="class_id"/>
                                     <field name="rno"/>
                                     <field name="addmission_date"/>
                                 </group>
@@ -77,6 +78,7 @@
                 <field name="fullname"/>
                 <field name="faculty_id"/>
                 <field name="department_id"/>
+                <field name="class_id"/>
                 <field name="email" widget="email"/>
                 <field name="dob"/>
                 <field name="tazkira_no"/>
