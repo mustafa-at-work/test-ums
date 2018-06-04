@@ -8,7 +8,7 @@
             <form>
                 <sheet>
                     <div class="oe_title" style="width:300px;height:50px;">
-                        <label for="fullname" class="oe_edit_only"/>
+
                         <h2>
                         <field name="fullname" placeholder="Student Full Name"/>
                         </h2>
@@ -19,7 +19,7 @@
                                 <group name="group-left" string="Contact Details">
                                     <field name="fatherName"/>
                                     <field name="phone"/>
-                                    <field name="email"/>
+                                    <field name="email" widget="email"/>
                                 </group>
                                 <group name="group-right" string="Citizensihp and Other Details">
                                     <field name="tazkira_no"/>
@@ -33,6 +33,7 @@
                                     <field name="current_province"/>
                                     <field name="current_district"/>
                                     <field name="current_village"/>
+                                    <field name="same_as_current_address"/>
                                 </group>
                                 <group name="group-right" string="Permanent Address">
                                     <field name="permanent_province"/>
@@ -40,14 +41,15 @@
                                     <field name="permanent_village"/>
                                 </group>
                             </group>
-                            <field name="same_as_current_address" type="checkbox"/>
+                            
                         </page>
                         <page string="Personal Information">
                             <group name="group-top">
                                 <group name="group-left" string="Position">
                                     <field name="school"/>    
-                                    <field name="faculty"/>
-                                    <field name="department"/>
+                                    <field name="faculty_id"/>
+                                    <field name="department_id" domain="[('faculty_id','=',faculty_id)]"/>
+                                    <field name="class_id"/>
                                     <field name="rno"/>
                                     <field name="addmission_date"/>
                                 </group>
@@ -71,9 +73,12 @@
         <field name="name">Student List View</field>
         <field name="model">ums.students</field>
         <field name="arch" type="xml">
-            <tree string="Student Tree View"> 
+            <tree string="Student Tree View">
+                <field name="addmission_date"/>
                 <field name="fullname"/>
-                <field name="fatherName"/>
+                <field name="faculty_id"/>
+                <field name="department_id"/>
+                <field name="class_id"/>
                 <field name="email" widget="email"/>
                 <field name="dob"/>
                 <field name="tazkira_no"/>
