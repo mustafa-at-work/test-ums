@@ -3,6 +3,7 @@ from odoo import fields, models, api
 
 class Year(models.Model):
     _name = 'ums.year'
+    _rec_name = 'year'
 
     _rec_name = 'year'
 
