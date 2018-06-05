@@ -27,6 +27,7 @@
         'views/views.xml',
         'views/templates.xml',
         'views/students_views.xml',
+        # 'views/secsions_views.xml',
         'views/classes_views.xml',
 
     ],
