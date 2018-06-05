@@ -61,3 +61,5 @@ class Student(models.Model):
             self.permanent_province = self.current_province
             self.permanent_district = self.current_district
             self.permanent_village = self.current_village
+
+     
