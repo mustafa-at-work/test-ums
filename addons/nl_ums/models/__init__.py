@@ -3,4 +3,3 @@
 from . import models
 from . import classes
 from . import students
-from . import sections
