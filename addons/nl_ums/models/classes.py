@@ -13,5 +13,4 @@ class Classes(models.Model):
     start_date = fields.Date('Start date')
     end_date = fields.Date('End date')
 
-    teacher_id = fields.Many2one('ums.teacher', string='Teacher')
-
+    teacher_id = fields.Many2one('hr.employee', string='Lecturers')

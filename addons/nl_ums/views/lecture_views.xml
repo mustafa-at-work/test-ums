@@ -1,6 +1,6 @@
 <odoo>
   <data>
-  <!-- views and menus -->
+  <!-- Lecture form view -->
   <record id="lecture_view_form" model="ir.ui.view">
       <field name="name">lecture.form</field>
       <field name="model">nl_ums.lecture</field>

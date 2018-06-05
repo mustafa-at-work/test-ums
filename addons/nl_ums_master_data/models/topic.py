@@ -16,4 +16,3 @@ class Topic(models.Model):
         ('topic_title_unique',
          'UNIQUE(title)',
          'Title of lectures must be unique!')]
-

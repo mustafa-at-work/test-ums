@@ -17,5 +17,3 @@ class Lecture(models.Model):
     # Fields declaration
     title = fields.Many2many('master.topic', string='Title')
     date = fields.Date('Date', required=True)
-
-

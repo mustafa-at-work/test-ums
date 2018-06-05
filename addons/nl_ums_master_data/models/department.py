@@ -10,4 +10,4 @@ class Department(models.Model):
 
     name = fields.Char('Department Name', required=True)
 
-    teacher_ids = fields.One2many('ums.teacher',  string='Department')
+    teacher_ids = fields.One2many('ums.teacher', string='Department')
