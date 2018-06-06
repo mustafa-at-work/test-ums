@@ -22,9 +22,6 @@
 						<group>
 							<field name="name"/>
 			        	</group>
-			        	<group>
-			        		<field name="department_ids" widget="many2many_tags"/>
-			        	</group>
 		        	</group>
 		        </sheet>
         	</form>

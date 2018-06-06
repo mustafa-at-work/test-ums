@@ -9,9 +9,10 @@ class Material(models.Model):
     _description = 'Materials for lectures and classes'
 
     # Fields declaration
-    name = fields.Char('Name')
+    name = fields.Char('Name', required=True)
     description = fields.Text('Description')
-    type = fields.Char('Type')
+    type = fields.Char('Type', required=True)
+    source_file = fields.Binary('Material File')
 
     # SQl constraints to check uniqueness of material names
     _sql_constraints = [

@@ -31,7 +31,8 @@ class Teacher(models.Model):
         ('phd', 'PHD')])
 
     # Relational fields
-    class_ids = fields.One2many('ums.classes', 'teacher_id', string='Classes')
+    class_id = fields.One2many('ums.classes', 'lecturer_id', string='Classes')
+    dept_id = fields.Many2one('ums.department', string='Department')
 
     # Compute field
     class_count = fields.Integer(
@@ -42,7 +43,7 @@ class Teacher(models.Model):
     @ api.one
     def _get_total_class(self):
         class_count = self.env['ums.classes'].search_count(
-            [['teacher_id.id', '=', self.id]])
+            [['lecturer_id.id', '=', self.id]])
         self.class_count = class_count
 
     # Method onchange to assign the year based on birth date.

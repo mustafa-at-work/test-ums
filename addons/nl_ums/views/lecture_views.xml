@@ -7,9 +7,14 @@
       <field name="arch" type="xml">
         <form string="Lectures">
             <group>
-                <field name="title" widget="many2many_tags"/>
+                <field name="title_ids" widget="many2many_tags"/>
                 <field name="date"/>
             </group>
+            <notebook>
+                <page string="Materials">
+                    <field name="material_ids"/>
+                </page>
+            </notebook>
         </form>
       </field>
   </record>
@@ -19,7 +24,7 @@
       <field name="model">ums.lecture</field>
       <field name="arch" type="xml">
           <tree string="Lectures">
-              <field name="title" widget="many2many_tags"/>
+              <field name="title_ids" widget="many2many_tags"/>
               <field name="date"/>
           </tree>
       </field>
