@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Material form view -->
+        <record id="material_view_form" model="ir.ui.view">
+            <field name="name">material.form</field>
+            <field name="model">ums.material</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="type"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Classes">
+                            <field name="class_ids"/>
+                        </page>
+                        <page string="Lectures">
+                            <field name="lecture_ids"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <!-- Material tree view -->
+        <record id="material_view_tree" model="ir.ui.view">
+            <field name="name">material.tree</field>
+            <field name="model">ums.material</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Material actions -->
+        <record id="material_list_action" model="ir.actions.act_window">
+            <field name="name">Material</field>
+            <field name="res_model">ums.material</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_noncotent_create">Create the first material</p>
+            </field>
+        </record>
+
+        <!-- Material menu -->
+        <menuitem id="material_menu" name="Materials" parent="ums_main_menu"
+                  action="material_list_action"/>
+    </data>
+</odoo>

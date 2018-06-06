@@ -13,8 +13,10 @@ class Teacher(models.Model):
     _inherit = 'hr.employee'
     _description = 'Lecturers in a university'
 
-    # Boolean field to check if the employee is a lecturer
+    # Fields declaration
     age = fields.Char('Age')
+
+    # Boolean field to check if the employee is a lecturer
     lecturer = fields.Boolean(string='Lecturer', default=False)
 
     # Selection fields

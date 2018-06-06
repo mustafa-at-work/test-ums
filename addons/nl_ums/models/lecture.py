@@ -9,7 +9,7 @@ from odoo import api, fields, models  # alphabetically ordered
 
 class Lecture(models.Model):
     # Private attributes
-    _name = 'nl_ums.lecture'
+    _name = 'ums.lecture'
     _description = 'Lectures to be thought in a class for a course'
     _order = 'date asc'
     _rec_name = 'title'

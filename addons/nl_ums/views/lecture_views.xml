@@ -3,7 +3,7 @@
   <!-- Lecture form view -->
   <record id="lecture_view_form" model="ir.ui.view">
       <field name="name">lecture.form</field>
-      <field name="model">nl_ums.lecture</field>
+      <field name="model">ums.lecture</field>
       <field name="arch" type="xml">
         <form string="Lectures">
             <group>
@@ -16,7 +16,7 @@
   <!-- Lecture tree view -->
   <record id="lecture_view_tree" model="ir.ui.view">
       <field name="name">lecture.tree</field>
-      <field name="model">nl_ums.lecture</field>
+      <field name="model">ums.lecture</field>
       <field name="arch" type="xml">
           <tree string="Lectures">
               <field name="title" widget="many2many_tags"/>
@@ -27,7 +27,7 @@
   <!-- Lecture actions -->
   <record id="lecture_list_action" model="ir.actions.act_window">
         <field name="name">Lectures</field>
-        <field name="res_model">nl_ums.lecture</field>
+        <field name="res_model">ums.lecture</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
