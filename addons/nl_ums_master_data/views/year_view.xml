@@ -1,49 +1,51 @@
 <?xml version="1.0"?>
 <odoo>
-    <!-- year tree view -->
-	<record id="ums_year_view_tree" model="ir.ui.view">
-		<field name="name">Year Tree</field>
-		<field name="model">ums.year</field>
-		<field name="arch" type="xml">
-			<tree>
-	            <field name="year"/>
-	            <field name="first_day_of_year"/>
-	            <field name="last_day_of_year"/>
-	            <field name="sequence"/>                
-        	</tree>
-		</field>
-	</record>
-    <!-- year form view -->
-	<record id="ums_year_view_form" model="ir.ui.view">
-		<field name="name">Year Form</field>
-		<field name="model">ums.year</field>
-		<field name="arch" type="xml">
-			<form>
-				<sheet>
-                    <group>
-                        <group>
-                            <field name="year"/>
-                            <field name="first_day_of_year"/>
-                        </group>
-                        <group>
-                            <field name="sequence"/>
-                            <field name="last_day_of_year"/>
-                        </group>
-                    </group>
-		        </sheet>
-        	</form>
-		</field>
-	</record>
-	<!--  year action menu-->
-	<act_window 
-        id="ums_year_action"
-		name="Year"
-		res_model="ums.year"
-		view_mode="tree,form" />
-	<!-- year menu -->
-	<menuitem 
-        id="ums_year_menu" 
-        name="Year" 
-        action="ums_year_action" 
-        parent="menu_master" />
+	<data>
+		<!-- year tree view -->
+		<record id="ums_year_view_tree" model="ir.ui.view">
+			<field name="name">Year Tree</field>
+			<field name="model">ums.year</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="year"/>
+					<field name="first_day_of_year"/>
+					<field name="last_day_of_year"/>
+					<field name="sequence"/>
+				</tree>
+			</field>
+		</record>
+		<!-- year form view -->
+		<record id="ums_year_view_form" model="ir.ui.view">
+			<field name="name">Year Form</field>
+			<field name="model">ums.year</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="year"/>
+								<field name="first_day_of_year"/>
+							</group>
+							<group>
+								<field name="sequence"/>
+								<field name="last_day_of_year"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!--  year action menu-->
+		<act_window
+			id="ums_year_action"
+			name="Year"
+			res_model="ums.year"
+			view_mode="tree,form" />
+		<!-- year menu -->
+		<menuitem
+			id="ums_year_menu"
+			name="Year"
+			action="ums_year_action"
+			parent="menu_master" />
+	</data>
 </odoo>

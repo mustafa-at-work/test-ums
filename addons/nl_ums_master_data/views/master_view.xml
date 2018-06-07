@@ -1,7 +1,6 @@
 <odoo>
 	<data>
-			<!-- main menu -->
-		<menuitem id="menu_master" name="Master"/>
-
+		<!-- main menu -->
+		<menuitem id="menu_master" name="Master" parent="nl_ums.ums_main_menu"/>
 	</data>
 </odoo>

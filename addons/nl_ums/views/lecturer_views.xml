@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <!--Lecturer form view -->
+        <record id="lecturer_view_form" model="ir.ui.view">
+            <field name="name">lecturers.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="lecturer"/>
+                    <label for="lecturer"/>
+                </xpath>
+                <xpath expr="//field[@name='birthday']" position="after">
+                    <field name="age" attrs="{'invisible':[('lecturer', '!=', True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='mobile_phone']" position="replace">
+                    <field name="dept_id" attrs="{'invisible':[('lecturer', '!=', True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='coach_id']" position="replace">
+                    <field name="academic_degree" attrs="{'invisible':[('lecturer', '!=', True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="replace">
+                    <field name="educational_degree" attrs="{'invisible':[('lecturer', '!=', True)]}"/>
+                </xpath>
+                <xpath expr="//page[@name='hr_settings']" position="after">
+                    <page string="Classes" attrs="{'invisible':[('lecturer', '!=', True)]}">
+                         <field name="class_id"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Lecturer tree view -->
+         <record id="lecturer_view_tree" model="ir.ui.view">
+            <field name="name">lecturers.tree</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='department_id']" position="replace">
+                    <field name="dept_id"/>
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="replace">
+                    <field name="class_count"/>
+                </xpath>
+                <xpath expr="//field[@name='job_id']" position="replace">
+                    <field name="academic_degree"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Lecturer filter view -->
+         <record id="lecturer_view_search" model="ir.ui.view">
+            <field name="name">lecturers.filter</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+                <search>
+                    <filter string="Lecturers" name="lecturer" domain="[('lecturer', '=', True)]"/>
+                </search>
+            </field>
+        </record>
+        <!-- Lecturer actions -->
+        <record id="lecturer_list_action" model="ir.actions.act_window">
+            <field name="name">Lecturer</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">kanban,tree,form,</field>
+            <field name="context" eval="{'search_default_lecturer': 1}"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first lecturer</p>
+            </field>
+        </record>
+
+        <!-- Lecturer menu -->
+        <menuitem id="lecturer_menu" name="Lecturers" parent="ums_main_menu"
+            action="lecturer_list_action"/>
+    </data>
+</odoo>

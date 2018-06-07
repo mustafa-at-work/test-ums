@@ -16,7 +16,7 @@ class Classes(models.Model):
     course_id = fields.Many2one('ums.course', string='Course', required=True)
     lecturer_id = fields.Many2one('res.partner', string='Lecturer', required=True)
     education_year = fields.Many2one('ums.year', required=True, string='Education Year')
-    timing = fields.Many2one('ums.timing', string='Timing', required=True)
+    timing_id = fields.Many2one('ums.timing', string='Timing', required=True)
     start_time = fields.Char('Start time')
     end_time = fields.Char('End time')
     class_room = fields.Many2one('ums.class_room', string='Class room', required=True)
@@ -28,12 +28,13 @@ class Classes(models.Model):
         ('fourthYear', 'Fourth Year'),
     ], default='firstYear')
 
-    student_ids = fields.Many2many('ums.students', string='Studetns')
+    student_ids = fields.Many2many('ums.students', string='Students')
+    lecturer_id = fields.Many2one('hr.employee', string='Lecturers')
+    material_ids = fields.Many2many('ums.material', string='Materials')
 
-    get_count_student=fields.Integer(compute='_get_count_student', string='Number Of Student')
+    get_count_student = fields.Integer(compute='_get_count_student', string='Number Of Student')
 
-    @api.one 
+    @api.one
     def _get_count_student(self):
         get_count = self.env['ums.students'].search_count([['class_ids.id', '=', self.id]])
         self.get_count_student = get_count
-         
