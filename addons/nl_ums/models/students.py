@@ -12,7 +12,7 @@ class Student(models.Model):
     description = 'Student Model'
     faculty_id = fields.Many2one('ums.faculty', string="Faculty")
     department_id = fields.Many2one('ums.department', string="Department")
-    class_id = fields.Many2one('ums.classes', string="Class")
+    class_ids = fields.Many2many('ums.classes', string="Class")
 
 
     fullname = fields.Char(string='Full Name', required=True)

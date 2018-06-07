@@ -49,7 +49,7 @@
                                     <field name="school"/>    
                                     <field name="faculty_id"/>
                                     <field name="department_id" domain="[('faculty_id','=',faculty_id)]"/>
-                                    <field name="class_id"/>
+                                    <field name="class_ids" widget="many2many_tags"/>
                                     <field name="rno"/>
                                     <field name="addmission_date"/>
                                 </group>
@@ -78,7 +78,7 @@
                 <field name="fullname"/>
                 <field name="faculty_id"/>
                 <field name="department_id"/>
-                <field name="class_id"/>
+                <field name="class_ids"/>
                 <field name="email" widget="email"/>
                 <field name="dob"/>
                 <field name="tazkira_no"/>
@@ -87,17 +87,17 @@
     </record>
         
     <!--Parent Menu Begings Here-->
-    <record model="ir.actions.act_window" id="student_list_action">
+    <record model="ir.actions.act_window" id="ums_students_list_action">
         <field name="name">Students Registration</field>
         <field name="res_model">ums.students</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field> 
     </record>
-    <menuitem 
-        id="students_menu" 
-        name="Students" 
-        parent="ums_main_menu" 
-        action="student_list_action"/>
+    <menuitem
+        id='ums_student_side_menu'
+        parent='ums_main_menu'
+        name='Students'
+        action='ums_students_list_action'/>
 
     </data>
 </odoo>
