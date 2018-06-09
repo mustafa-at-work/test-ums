@@ -24,20 +24,21 @@
 
     # always loaded
     'data': [
-            'views/master_view.xml',
-            'views/faculty_view.xml',
-            'views/department_view.xml',
-            'views/semister_view.xml',
-            'views/building_view.xml',
-            'views/floor_view.xml',
-            'views/class_room_view.xml',
-            'views/year_view.xml',
-            'views/timing_view.xml',
-            'views/course_view.xml',
-
+        # 'security/ir.model.access.csv',
+        'views/master_views.xml',
+        'views/topic_views.xml',
+        'views/course_views.xml',
+        'views/faculty_views.xml',
+        'views/department_views.xml',
+        'views/timing_views.xml',
+        'views/class_room_views.xml',
+        'views/floor_views.xml',
+        'views/building_views.xml',
+        'views/semester_views.xml',
+        'views/year_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-
+        'demo/demo.xml',
     ],
 }

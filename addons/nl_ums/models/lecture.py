@@ -12,11 +12,11 @@ class Lecture(models.Model):
     _name = 'ums.lecture'
     _description = 'Lectures to be thought in a class for a course'
     _order = 'date asc'
-    _rec_name = 'title_ids'
+    # _rec_name = 'title_ids'
 
     # Fields declaration
     date = fields.Date('Date', required=True)
 
     # Relational fields
-    title_ids = fields.Many2many('ums.topic', string='Title', required=True)
+    title_ids = fields.Many2many('ums.topic', 'ums_lecture_ums_topic_rel', string='Title', required=True)
     material_ids = fields.Many2many('ums.material', string='Materials')

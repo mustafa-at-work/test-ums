@@ -1,0 +1,5 @@
+<odoo>
+    <data>
+        <menuitem id="menu_master" name="Master" parent="nl_ums.ums_main_menu"/>
+    </data>
+</odoo>

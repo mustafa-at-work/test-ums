@@ -5,17 +5,17 @@ from odoo import models, fields, api
 
 class Topic(models.Model):
     _name = 'ums.topic'
-    _description = 'Course Topic'
-    _rec_name = 'title'
+    _description = 'Course Topics'
 
+    # Fields declaration
     title = fields.Char(string='Title')
     description = fields.Text()
 
     # Relational fields
-    lecture_ids = fields.Many2many('ums.lecture', string='Lectures')
+    lecture_ids = fields.Many2many('ums.lecture', 'ums_lecture_ums_topic_rel', string='Lectures')
 
-    # sql constraint to check uniqueness of topic title
+    # SQL Constraint to check uniqueness of topic names
     _sql_constraints = [
-        ('topic_title_unique',
-         'UNIQUE(title)',
-         'Title of lectures must be unique!')]
+            ('topic_title_unique',
+             'UNIQUE(title)',
+             'Title of lectures must be unique!')]

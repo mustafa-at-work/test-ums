@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+         <record id="view_form_course" model="ir.ui.view">
+            <field name="name">Course Form</field>
+            <field name="model">ums.course</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="Course Form">
+                            <group>
+                                <field name="title"/>
+                                <field name="credit"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+       <record id="view_tree_course" model="ir.ui.view">
+            <field name="name">Course Tree</field>
+            <field name="model">ums.course</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="title"/>
+                    <field name="credit"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Topic actions -->
+        <record id="master_course_action" model="ir.actions.act_window" >
+        <field name="name">Course</field>
+        <field name="res_model">ums.course</field>
+        <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- course menu -->
+        <menuitem id="menu_course" name="Course" action="master_course_action" parent="menu_master" />
+
+    </data>
+</odoo>
