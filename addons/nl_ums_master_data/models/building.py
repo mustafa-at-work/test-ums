@@ -9,5 +9,5 @@ class Building(models.Model):
     location = fields.Char('Location', required=True)
 
     # Relational fields
-    class_room_ids = fields.One2many('ums.class_room', 'building_id', string='Class rooms')
+    class_room_ids = fields.One2many('ums.class_room', 'floor_id', string='Class rooms')
     floor_ids = fields.One2many('ums.floor', 'building_id', string='Floor')

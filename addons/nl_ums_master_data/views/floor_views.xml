@@ -27,15 +27,15 @@
 		</field>
 	</record>
 	<!--  floor action menu-->
-	<act_window 
+	<act_window
         id="ums_floor_action"
 		name="Floor"
 		res_model="ums.floor"
 		view_mode="tree,form" />
 	<!-- floor menu -->
-	<menuitem 
-        id="ums_floor_menu" 
-        name="Floor" 
-        action="ums_floor_action" 
+	<menuitem
+        id="ums_floor_menu"
+        name="Floor"
+        action="ums_floor_action"
         parent="menu_master" />
 </odoo>

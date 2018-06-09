@@ -29,15 +29,15 @@
 		</field>
 	</record>
 	<!--  Action of class room menu-->
-	<act_window 
+	<act_window
         id="ums_class_room_action"
 		name="Classroom"
 		res_model="ums.class_room"
 		view_mode="tree,form" />
 	<!-- Class room menu -->
-	<menuitem 
-        id="ums_class_room_menu" 
-        name="Class Room" 
-        action="ums_class_room_action" 
+	<menuitem
+        id="ums_class_room_menu"
+        name="Class Room"
+        action="ums_class_room_action"
         parent="menu_master" />
 </odoo>

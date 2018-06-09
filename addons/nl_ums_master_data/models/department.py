@@ -8,6 +8,6 @@ class Department(models.Model):
 
     faculty_id = fields.Many2one('ums.faculty', string='Faculty Name')
     course_ids = fields.Many2many('ums.course', string='Courses')
-    lecturer_ids = fields.One2many('hr.employee', string='Lecturers')
+    # lecturer_ids = fields.One2many('hr.employee', 'dept_id', string='Lecturers')
 
     name = fields.Char('Department Name', required=True)

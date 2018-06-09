@@ -8,4 +8,4 @@ class Timing(models.Model):
     batch_time = fields.Char('Name', required=True)
 
     # Relational fields
-    class_ids = fields.One2many('ums.classes', string='Classes')
+    # class_ids = fields.One2many('ums.classes', string='Classes')

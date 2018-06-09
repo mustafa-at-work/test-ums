@@ -29,8 +29,8 @@ class Classes(models.Model):
     ], default='firstYear')
 
     student_ids = fields.Many2many('ums.students', string='Students')
-    lecturer_id = fields.Many2one('hr.employee', string='Lecturers')
-    material_ids = fields.Many2many('ums.material', string='Materials')
+    # lecturer_id = fields.Many2one('hr.employee', string='Lecturers')
+    # material_ids = fields.Many2many('ums.material', string='Materials')
 
     get_count_student = fields.Integer(compute='_get_count_student', string='Number Of Student')
 
