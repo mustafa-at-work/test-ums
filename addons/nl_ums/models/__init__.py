@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from . import models
+from . import lecture
 from . import classes
 from . import students
+from . import lecturer
+from . import material
