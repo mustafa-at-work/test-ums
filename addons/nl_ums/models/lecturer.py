@@ -32,7 +32,7 @@ class Teacher(models.Model):
 
     # Relational fields
     class_id = fields.One2many('ums.classes', 'lecturer_id', string='Classes')
-    dept_id = fields.Many2one('ums.department', inverse='lecturer_ids', string='Department')
+    dept_id = fields.Many2one('ums.department', string='Department')
 
     # Compute field
     class_count = fields.Integer(

@@ -12,7 +12,7 @@ class Classes(models.Model):
 
     name = fields.Char('Class Name', required=True)
     department_id = fields.Many2one('ums.department', string='Department', required=True)
-    semester_id = fields.Many2one('ums.semister', string='Semester', required=True)
+    semester_id = fields.Many2one('ums.semester', string='Semester', required=True)
     course_id = fields.Many2one('ums.course', string='Course', required=True)
     lecturer_id = fields.Many2one('res.partner', string='Lecturer', required=True)
     education_year = fields.Many2one('ums.year', required=True, string='Education Year')
