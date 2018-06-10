@@ -13,6 +13,7 @@ class Material(models.Model):
     description = fields.Text('Description')
     type = fields.Char('Type', required=True)
     source_file = fields.Binary('Material File')
+    color = fields.Integer()
 
     # SQl constraints to check uniqueness of material names
     _sql_constraints = [

@@ -14,9 +14,20 @@ class Lecture(models.Model):
     _order = 'date asc'
     # _rec_name = 'title_ids'
 
-    # Fields declaration
+    # Fields
+    description = fields.Text('Description')
     date = fields.Date('Date', required=True)
+    state = fields.Selection([
+        ('not held', 'Not Held'),
+        ('ongoing', 'Ongoing'),
+        ('held', 'Held')])
+
+    color = fields.Integer()
+
+    # Related field
+    title = fields.Char(related='title_ids.title')
 
     # Relational fields
     title_ids = fields.Many2many('ums.topic', 'ums_lecture_ums_topic_rel', string='Title', required=True)
     material_ids = fields.Many2many('ums.material', string='Materials')
+
