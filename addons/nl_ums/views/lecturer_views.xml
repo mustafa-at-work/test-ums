@@ -15,7 +15,7 @@
                 <xpath expr="//field[@name='birthday']" position="after">
                     <field name="age" attrs="{'invisible':[('lecturer', '!=', True)]}"/>
                 </xpath>
-                <xpath expr="//field[@name='mobile_phone']" position="replace">
+                <xpath expr="//field[@name='department_id']" position="replace">
                     <field name="dept_id" attrs="{'invisible':[('lecturer', '!=', True)]}"/>
                 </xpath>
                 <xpath expr="//field[@name='coach_id']" position="replace">
@@ -24,7 +24,7 @@
                 <xpath expr="//field[@name='parent_id']" position="replace">
                     <field name="educational_degree" attrs="{'invisible':[('lecturer', '!=', True)]}"/>
                 </xpath>
-                <xpath expr="//page[@name='hr_settings']" position="after">
+                <xpath expr="//page[@name='hr_settings']" position="replace">
                     <page string="Classes" attrs="{'invisible':[('lecturer', '!=', True)]}">
                          <field name="class_id"/>
                     </page>
@@ -61,11 +61,23 @@
                 </search>
             </field>
         </record>
+
+        <!-- Lecturer Graph view -->
+        <record id="lecturer_view_graph" model="ir.ui.view">
+            <field name="name">lecturer.graph</field>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <graph>
+                    <field name="dept_id"/>
+                    <field name="class_count" type="measure"/>
+                </graph>
+            </field>
+        </record>
         <!-- Lecturer actions -->
         <record id="lecturer_list_action" model="ir.actions.act_window">
             <field name="name">Lecturer</field>
             <field name="res_model">hr.employee</field>
-            <field name="view_mode">kanban,tree,form,</field>
+            <field name="view_mode">kanban,graph,tree,form,</field>
             <field name="context" eval="{'search_default_lecturer': 1}"/>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">Create the first lecturer</p>

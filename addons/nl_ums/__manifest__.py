@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'hr', 'nl_ums_master_data'],
+    'depends': ['hr', 'nl_ums_master_data'],
 
     # always loaded
     'data': [

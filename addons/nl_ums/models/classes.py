@@ -12,7 +12,7 @@ class Classes(models.Model):
 
     name = fields.Char('Class Name', required=True)
     department_id = fields.Many2one('ums.department', string='Department', required=True)
-    semester_id = fields.Many2one('ums.semister', string='Semester', required=True)
+    semester_id = fields.Many2one('ums.semester', string='Semester', required=True)
     course_id = fields.Many2one('ums.course', string='Course', required=True)
     lecturer_id = fields.Many2one('res.partner', string='Lecturer', required=True)
     education_year = fields.Many2one('ums.year', required=True, string='Education Year')
@@ -29,8 +29,8 @@ class Classes(models.Model):
     ], default='firstYear')
 
     student_ids = fields.Many2many('ums.students', string='Students')
-    lecturer_id = fields.Many2one('hr.employee', string='Lecturers')
-    material_ids = fields.Many2many('ums.material', string='Materials')
+    # lecturer_id = fields.Many2one('hr.employee', string='Lecturers')
+    # material_ids = fields.Many2many('ums.material', string='Materials')
 
     get_count_student = fields.Integer(compute='_get_count_student', string='Number Of Student')
 

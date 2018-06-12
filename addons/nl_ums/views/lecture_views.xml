@@ -7,8 +7,14 @@
       <field name="arch" type="xml">
         <form string="Lectures">
             <group>
+                <group>
                 <field name="title_ids" widget="many2many_tags"/>
                 <field name="date"/>
+            </group>
+            <group>
+                <field name="state"/>
+                <field name="description"/>
+            </group>
             </group>
             <notebook>
                 <page string="Materials">
@@ -24,17 +30,67 @@
       <field name="model">ums.lecture</field>
       <field name="arch" type="xml">
           <tree string="Lectures">
-              <field name="title_ids" widget="many2many_tags"/>
+              <field name="title"/>
               <field name="date"/>
+              <field name="state"/>
+              <field name="description"/>
           </tree>
       </field>
   </record>
+
+  <!-- Kanban views -->
+  <record model="ir.ui.view" id="view_openacad_session_kanban">
+            <field name="name">lecture.kanban</field>
+            <field name="model">ums.lecture</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state">
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div
+                                    t-attf-class="oe_kanban_color_{{kanban_getcolor(record.color.raw_value)}}
+                                                  oe_kanban_global_click_edit oe_semantic_html_override
+                                                  oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}">
+                                <div class="oe_dropdown_kanban">
+                                    <!-- dropdown menu -->
+                                    <div class="oe_dropdown_toggle">
+                                        <i class="fa fa-bars fa-lg"/>
+                                        <ul class="oe_dropdown_menu">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                            <li>
+                                                <ul class="oe_kanban_colorpicker"
+                                                    data-field="color"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                                <div t-attf-class="oe_kanban_content">
+                                    <!-- title -->
+                                    Lecture name:
+                                    <field name="title"/>
+                                    <br/>
+                                    Date:
+                                    <field name="date"/>
+                                    <br/>
+                                    State:
+                                    <field name="state"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
   <!-- Lecture actions -->
   <record id="lecture_list_action" model="ir.actions.act_window">
         <field name="name">Lectures</field>
         <field name="res_model">ums.lecture</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,kanban,form</field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">Create the first lecture</p>
         </field>

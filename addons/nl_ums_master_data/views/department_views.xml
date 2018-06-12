@@ -39,6 +39,4 @@
 		view_mode="tree,form" />
 
 	<menuitem id="menu_department" name="Department" action="action_department" parent="menu_master" />
-
-
 </odoo>

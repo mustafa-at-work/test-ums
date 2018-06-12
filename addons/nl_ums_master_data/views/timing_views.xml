@@ -25,15 +25,15 @@
 		</field>
 	</record>
 	<!--  Timing action menu-->
-	<act_window 
+	<act_window
         id="ums_timing_action"
 		name="Timing"
 		res_model="ums.timing"
 		view_mode="tree,form" />
 	<!-- Timing menu -->
-	<menuitem 
-        id="ums_timing_menu" 
-        name="Timing" 
-        action="ums_timing_action" 
+	<menuitem
+        id="ums_timing_menu"
+        name="Timing"
+        action="ums_timing_action"
         parent="menu_master" />
 </odoo>

@@ -20,11 +20,11 @@
 			<form>
 				<sheet>
 					<group>
-						 
+
                         <field name="name"/>
 
                         <field name="description"/>
-			        	 
+
                         <field name='location'/>
 		        	</group>
 		        </sheet>
@@ -33,16 +33,16 @@
 	</record>
 
 	<!--  Action of Building menu-->
-	<act_window 
+	<act_window
         id="ums_building_action"
 		name="Building"
 		res_model="ums.building"
 		view_mode="tree,form" />
 
 	<!-- Building menu -->
-	<menuitem 
-        id="ums_building_menu" 
-        name="Building" 
-        action="ums_building_action" 
+	<menuitem
+        id="ums_building_menu"
+        name="Building"
+        action="ums_building_action"
         parent="menu_master" />
 </odoo>
