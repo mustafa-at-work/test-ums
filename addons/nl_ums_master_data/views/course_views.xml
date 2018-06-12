@@ -14,6 +14,7 @@
                                 <field name="credit"/>
                             </group>
                             <group>
+                                <field name="topic_ids" widget="many2many_tags"/>
                                 <field name="description"/>
                             </group>
                         </group>
@@ -29,6 +30,7 @@
                 <tree>
                     <field name="title"/>
                     <field name="credit"/>
+                    <field name="topic_ids"/>
                     <field name="description"/>
                 </tree>
             </field>
